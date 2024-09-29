@@ -10,7 +10,7 @@
     --clr-white: 0 0% 100%;
 
     /* Font Sizes */
-    --fs-900: 9.375rem;
+    --fs-900: 9rem;
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
     --fs-600: 2rem;
@@ -23,6 +23,21 @@
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+
+    /* Spacing */
+    --spc-1600: 8rem;
+    --spc-1200: 6rem;
+    --spc-1000: 5rem;
+    --spc-800: 4rem;
+    --spc-600: 3rem;
+    --spc-500: 2.5rem;
+    --spc-400: 2rem;
+    --spc-300: 1.5rem;
+    --spc-200: 1rem;
+    --spc-150: .75rem;
+    --spc-100: .5rem;
+    --spc-50: .25rem;
+    --spc-25: .125rem;
 }
 
 
@@ -59,7 +74,7 @@ input, button, textarea, select {
 /* Set body                               */
 
 body {
-    font-family: var(--ff-sans-normal);
+    font-family: var(--ff-serif);
     font-size: var(--fs-400);
     font-weight: 400;
     width: 100%;
@@ -109,16 +124,16 @@ img, picture {
 
 .flex {
     display: flex;
-    gap: var(--gap, 1rem);
+    gap: var(--gap, --spc-200);
 }
 
 .grid {
     display: grid;
-    gap: var(--gap, 1rem);
+    gap: var(--gap, --spc-200);
 }
 
 .wrapper {
-    padding-inline: 2rem;
+    padding-inline: var(--spc-400);
     max-width: 80rem;
     margin-inline: auto;
 }
@@ -134,7 +149,12 @@ img, picture {
 .numbered-title span {
     color: hsl( var(--clr-white) / .25 );
     font-weight: 700;
-    padding-right: .5em;
+    padding-right: var(--spc-100);
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, --spc-200);
+    outline: 1px solid red;
 }
 
 /* Color Classes                  */
@@ -175,9 +195,6 @@ img, picture {
 .fs-600 {
     line-height: 1.1;
 }
-
-
-
 
 /*--------------------------------*/
 /* Styling                        */
